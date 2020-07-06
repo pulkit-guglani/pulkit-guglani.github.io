@@ -183,7 +183,7 @@
               </div>
             </a>-->
             
-            <video id="roomVideo" style="height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 60%" controls autoplay muted loop>
+            <video id="roomVideo" controls autoplay muted loop>
               <source src="https://www.dropbox.com/s/72wu58fdz96ssxx/room2.MP4?dl=1" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -349,15 +349,16 @@
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       var element = document.getElementById('text');
       if (isMobile) {
-        document.getElementById("quote").innerText="fuck quote";
         document.getElementById("roomVideo").style.maxHeight = "25%";
+        document.getElementById("quote").innerText="fuck quote in android";
+       
        
       } else {
         
-        document.getElementById("quote").innerText="fuck quote twice";
+        document.getElementById("quote").innerText="fuck quote in desktop";
       }
-      document.getElementById("quote").innerText="fuck quote + "+isMobile.toString();
     </script>
+    
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
@@ -377,4 +378,9 @@
     <script src="js/main.js"></script>
     
   </body>
+<style>
+  #roomVideo{
+    height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 60%;
+  }
+</style>
 </html>
