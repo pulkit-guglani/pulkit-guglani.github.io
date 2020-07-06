@@ -210,7 +210,7 @@
               <p><a href="#">View Project</a></p>
             </div>
           </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true" style="padding-left: 2%; padding-right: 1px;">
+          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true">
           <!-- <div style="padding-top: 5%">
             <iframe src="https://www.youtube-nocookie.com/embed/3ZUYxs6ssJw?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&controls=0" width="700" height="415" style="width: 100%; height: 50%; "></iframe>
            </div>-->
@@ -354,6 +354,9 @@
       if (isMobile) {
         document.getElementById("roomVideo").style.maxHeight = "30%";
         document.getElementById("quote").innerText="fuck quote in android";
+        var x = document.getElementsByClassName("video-container");
+        x[0].style.width = "100%";
+        x[0].style.height = "100%";
         /*document.getElementById("LudoVideo").style.width = "100%";
         document.getElementById("LudoVideo").style.height = "100%";*/
       } else {
