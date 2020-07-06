@@ -183,7 +183,7 @@
               </div>
             </a>-->
             
-            <video style="height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 60%" controls autoplay muted loop>
+            <video id="roomVideo" style="height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 60%" controls autoplay muted loop>
               <source src="https://www.dropbox.com/s/72wu58fdz96ssxx/room2.MP4?dl=1" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -352,6 +352,7 @@
         document.getElementById("roomVideo").style.maxHeight = "25%";
         document.getElementById("quote").innerText="fuck quote";
       } else {
+        
         document.getElementById("quote").innerText="fuck quote twice";
       }
       document.getElementById("quote").innerText="fuck quote + "+isMobile.toString();
