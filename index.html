@@ -26,6 +26,16 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
+  <script type="text/javascript">
+    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    var element = document.getElementById('text');
+    if (isMobile) {
+      document.getElementById("roomVideo").style.maxHeight = "15%";
+      document.getElementById("quote").innerHTML="fuck quote";
+    } else {
+      
+    }
+  </script>
   <body>
 
     <div class="KW_progressContainer">
@@ -107,7 +117,7 @@
                 <h1 class="bold-text">About</h1>
                 <div class="p-5">
                   <h2 class="mb-5">Hi! I'm Pulkit Guglani</h2>
-                  <p>"Games are the escape from the real version of the game itself"</p>
+                  <p id="quote">"Games are the escape from the real version of the game itself"</p>
                   <p><a href="#">Checkout my resume</a></p>
                   <ul class="ftco-footer-social list-unstyled mt-4">
                     <li><a href="#"><span class="icon-twitter"></span></a></li>
@@ -182,7 +192,7 @@
               </div>
             </a>-->
             
-            <video style="height:320px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 15%" controls autoplay muted loop>
+            <video style="height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 70%" controls autoplay muted loop>
               <source src="https://www.dropbox.com/s/72wu58fdz96ssxx/room2.MP4?dl=1" type="video/mp4">
               Your browser does not support the video tag.
             </video>
