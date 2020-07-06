@@ -26,16 +26,7 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
-  <script type="text/javascript">
-    var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    var element = document.getElementById('text');
-    if (isMobile) {
-      document.getElementById("roomVideo").style.maxHeight = "5%";
-      document.getElementById("quote").innerHTML="fuck quote";
-    } else {
-      document.getElementById("quote").innerHTML="fuck quote twice";
-    }
-  </script>
+  
   <body>
 
     <div class="KW_progressContainer">
@@ -192,7 +183,7 @@
               </div>
             </a>-->
             
-            <video style="height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 70%" controls autoplay muted loop>
+            <video style="height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 60%" controls autoplay muted loop>
               <source src="https://www.dropbox.com/s/72wu58fdz96ssxx/room2.MP4?dl=1" type="video/mp4">
               Your browser does not support the video tag.
             </video>
@@ -354,6 +345,16 @@
     </div>
 
 
+    <script type="text/javascript">
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      var element = document.getElementById('text');
+      if (isMobile) {
+        document.getElementById("roomVideo").style.maxHeight = "25%";
+        document.getElementById("quote").innerText="fuck quote";
+      } else {
+        document.getElementById("quote").innerText="fuck quote twice";
+      }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-migrate-3.0.1.min.js"></script>
     <script src="js/popper.min.js"></script>
