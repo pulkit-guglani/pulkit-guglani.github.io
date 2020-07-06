@@ -210,14 +210,18 @@
               <p><a href="#">View Project</a></p>
             </div>
           </div>
-          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true" style="padding-left: 10%; padding-right: 5%;">
-            <!--<iframe src="https://www.youtube-nocookie.com/embed/3ZUYxs6ssJw?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&controls=0" width="560" height="315" style="width: 90%; height: 50%; "></iframe>
--->
+          <div class="block-3 d-md-flex ftco-animate" data-scrollax-parent="true" style="padding-left: 5%; padding-right: 1px;">
+          <!-- <div style="padding-top: 5%">
+            <iframe src="https://www.youtube-nocookie.com/embed/3ZUYxs6ssJw?modestbranding=1&showinfo=0&rel=0&iv_load_policy=3&controls=0" width="700" height="415" style="width: 100%; height: 50%; "></iframe>
+           </div>-->
+            <div class="video-container" id="LudoVideo">
+              <iframe  src="https://www.youtube.com/embed/3ZUYxs6ssJw?modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&controls=0&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <!--
             <a href="portfolio-single.html" class="image d-flex justify-content-center align-items-center" style="background-image: url('images/work-3.jpg'); " data-scrollax=" properties: { translateY: '-30%'}">
 
             </a> -->
-            <div class="text">
+            <div class="text" style="margin-left: -10%">
               <h4 class="subheading">Web Design</h4>
               <h2 class="heading"><a href="portfolio-single.html">Even the all-powerful Pointing has no control</a></h2>
               <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text.</p>
@@ -348,10 +352,10 @@
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       var element = document.getElementById('text');
       if (isMobile) {
-        document.getElementById("roomVideo").style.maxHeight = "25%";
+        document.getElementById("roomVideo").style.maxHeight = "30%";
         document.getElementById("quote").innerText="fuck quote in android";
-       
-       
+        document.getElementById("LudoVideo").style.width = "100%";
+        document.getElementById("LudoVideo").style.height = "100%";
       } else {
         
         document.getElementById("quote").innerText="fuck quote in desktop";
@@ -381,6 +385,27 @@
   #roomVideo{
     outline: none;
     height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 100%;
+  }
+  .video-container {
+    overflow: hidden;
+    position: relative;
+    width:100%;
+  }
+
+  .video-container::after {
+    padding-top: 56.25%;
+    display: block;
+    content: '';
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 45%;
+    margin-top: 10%;
+    margin-right:5%;
   }
 </style>
 </html>
