@@ -355,8 +355,10 @@
         document.getElementById("roomVideo").style.maxHeight = "30%";
         document.getElementById("quote").innerText="fuck quote in android";
         var x = document.getElementsByClassName("video-container");
-        x[0].style.width = "100%";
-        x[0].style.height = "100%";
+        x[0].getElementsByTagName("iframe")[0].style.width = "100%";
+        x[0].getElementsByTagName("iframe")[0].style.height = "100%";
+        /*x[0].style.width = "100%";
+        x[0].style.height = "100%";*/
         /*document.getElementById("LudoVideo").style.width = "100%";
         document.getElementById("LudoVideo").style.height = "100%";*/
       } else {
