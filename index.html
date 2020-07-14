@@ -39,7 +39,7 @@
     <nav id="colorlib-main-nav" role="navigation">
       <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle active"><i></i></a>
       <div class="js-fullheight colorlib-table">
-        <div class="img" style="background-image: url(images/SS.png);"></div>
+        <div class="img" style="background-image: url(images/me.jpg);"></div>
         <div class="colorlib-table-cell js-fullheight">
           <div class="row no-gutters">
             <div class="col-md-12 text-center">
@@ -64,7 +64,7 @@
           <div class="row">
             <div class="col-md-12">
               <div class="colorlib-navbar-brand">
-                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/SS.png);"></span>Pulkit Guglani</a>
+                <a class="colorlib-logo" href="index.html"><span class="logo-img" style="background-image: url(images/me.jpg);"></span>Pulkit Guglani</a>
               </div>
               <a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
             </div>
@@ -102,7 +102,7 @@
       <section class="ftco-section about-section">
         <div class="container">
           <div class="row d-flex" data-scrollax-parent="true">
-            <div class="col-md-4 author-img" style="background-image: url(images/SS.png);" data-scrollax=" properties: { translateY: '-70%'}"></div>
+            <div class="col-md-4 author-img" style="background-image: url(images/me.jpg);" data-scrollax=" properties: { translateY: '-70%'}"></div>
             <div class="col-md-2"></div>
             <div class="col-md-6 wrap ftco-animate">
               <div class="about-desc">
@@ -276,8 +276,13 @@
       
      <!-- <a href="TrueFriend/index.html"><h3>Play Game </h3></a>-->
 
-     
-        <iframe src="TrueFriend/index.html" height="650" width="1000" style="margin-left: 15%" frameborder="0px"></iframe>
+      <h2 class="heading" align="center">Play with Website</h2>
+      <br>
+    <div class="resp-container">
+    <iframe class="resp-iframe" src="Game/index.html" allowfullscreen></iframe>
+</div>
+	 
+       <!-- <iframe src="Game/index.html" width =height/2px; height = 50% max-height = 600px frameborder="0px"></iframe> -->
         
       
       <section class="ftco-section ftco-counter" id="section-counter">
@@ -363,7 +368,8 @@
         x[0].getElementsByTagName("iframe")[0].style.width = "100%";
         x[0].getElementsByTagName("iframe")[0].style.height = "100%";
         document.getElementById("LudoVideoText").style.marginLeft="1%";
-
+        var y = document.getElementsByClassName("resp-container");
+        y[0].style.paddingTop = "125%";
         /*x[0].style.width = "100%";
         x[0].style.height = "100%";*/
         /*document.getElementById("LudoVideo").style.width = "100%";
@@ -394,6 +400,21 @@
     
   </body>
 <style>
+
+  .resp-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    border: 0;
+	}
+
+  .resp-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 75%;
+	}
   #roomVideo{
     outline: none;
     height:325px; padding-left: 5%; width:480px; padding-right: 4%; padding-top: 10%; max-width: 100%; max-height: 100%;
