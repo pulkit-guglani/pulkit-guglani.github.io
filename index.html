@@ -294,9 +294,12 @@
         6. In Mobile Phones buttons are laggy specially right button , so press it again to make everything work again.<br>
         7. Text me if you think android app for this game is a better choice , I will publish it to Play Store if I get responses.<br>
       </p>
+      <br>
+      <h3 class="heading" style="margin-left: 10%">Feedback</h3>
+      <textarea id="mainText" placeholder="Enter Text here . . ." style="margin-left: 10%"></textarea>
+      <button id ="submitButton"  onclick="submit()" style="margin-left: 10%"><i class="icon-arrow-circle-right\"></i></button>
 </div>
-    
-	 
+      
        <!-- <iframe src="Game/index.html" width =height/2px; height = 50% max-height = 600px frameborder="0px"></iframe> -->
         
       
@@ -373,6 +376,36 @@
     </div>
 
 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAGor56v8MP504b2Z8kT1MJBB31EWV2Iyc",
+            authDomain: "pulkitguglanidotme.firebaseapp.com",
+            databaseURL: "https://pulkitguglanidotme.firebaseio.com",
+            projectId: "pulkitguglanidotme",
+            storageBucket: "pulkitguglanidotme.appspot.com",
+            messagingSenderId: "590186349149",
+            appId: "1:590186349149:web:b43cd0e5e7e67747fd43b4",
+            measurementId: "G-B8K0D3R5KE"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+    <script src = "js/firebaseScripts.js"></script>
+    
+    
+    
+    
+
     <script type="text/javascript">
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
       var element = document.getElementById('text');
@@ -384,7 +417,7 @@
         x[0].getElementsByTagName("iframe")[0].style.height = "100%";
         document.getElementById("LudoVideoText").style.marginLeft="1%";
         var y = document.getElementsByClassName("resp-container");
-        y[0].style.paddingTop = "125%";
+        y[0].style.paddingTop = "115%";
         /*x[0].style.width = "100%";
         x[0].style.height = "100%";*/
         /*document.getElementById("LudoVideo").style.width = "100%";
