@@ -285,19 +285,49 @@
         3. You can destroy pictures by shooting them 3 times. <br>
       </p>
       <br>
-    <div class="resp-container">
+    <div class="resp-container" style="margin-left: 10%">
     <iframe class="resp-iframe" src="Game/index.html" allowfullscreen></iframe>
-      <h4 class="heading" style="margin-left: 10%"> Other Things :</h4>
-      <p style="margin-left: 10%"><br>
+      <h4 class="heading"> Other Things :</h4>
+      <p><br>
         4. Find hidden place to see a new area ( Area is Under Construction but still you can find it).<br>
         5. Press Restart Button at top to Restart the Game.<br>
         6. In Mobile Phones buttons are laggy specially right button , so press it again to make everything work again.<br>
         7. Text me if you think android app for this game is a better choice , I will publish it to Play Store if I get responses.<br>
+        
+        
       </p>
       <br>
-      <h3 class="heading" style="margin-left: 10%">Feedback</h3>
-      <textarea id="mainText" placeholder="Enter Text here . . ." style="margin-left: 10%"></textarea>
-      <button id ="submitButton"  onclick="submit()" style="margin-left: 10%"><i class="icon-arrow-circle-right\"></i></button>
+      <h4 class="heading">Your Name <span style="color: red"> * </span></h4>
+      <input type="text" id="name" placeholder="Enter your name " style="background-color: #1a1a1a; color: white"/>
+      <br>
+      <br>
+
+
+      <h4 class="heading">Feedback</h4>
+      <p>You liked the game after playing (if no please mention in suggestions) ?<span style="color: red"> * </span></p>
+      <input type="radio" id="likedYes" name="liked" value="likedYes">
+      <label for="likedYes">Yes</label><br>
+      <input type="radio" id="likedNo" name="liked" value="likedNo">
+      <label for="likedNo">No</label><br><br>
+      
+      
+        <p>Should this mini Game be published on Play Store for better controls or other reasons?<span style="color: red"> * </span></p>
+        <input type="radio" id="appYes" name="PlayStore" value="appYes">
+        <label for="appYes">Yes</label><br>
+        <input type="radio" id="appNo" name="PlayStore" value="appNo">
+        <label for="appNo">No</label><br><br>
+      
+      
+      <h4 class="heading">Suggestions</h4>
+      <br>
+      <textarea id="suggestion" placeholder="Enter Text here . . ." style="background-color: #1a1a1a; color: white"></textarea>
+      <br>
+      <br>
+      
+      
+      <button id ="submitButton"  onclick="submit()" style="margin-left: 280px; color: white; background-color: #1a1a1a">Submit</button>
+      
+      
 </div>
       
        <!-- <iframe src="Game/index.html" width =height/2px; height = 50% max-height = 600px frameborder="0px"></iframe> -->
@@ -382,24 +412,26 @@
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-database.js"></script>
 
     <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyAGor56v8MP504b2Z8kT1MJBB31EWV2Iyc",
-            authDomain: "pulkitguglanidotme.firebaseapp.com",
-            databaseURL: "https://pulkitguglanidotme.firebaseio.com",
-            projectId: "pulkitguglanidotme",
-            storageBucket: "pulkitguglanidotme.appspot.com",
-            messagingSenderId: "590186349149",
-            appId: "1:590186349149:web:b43cd0e5e7e67747fd43b4",
-            measurementId: "G-B8K0D3R5KE"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGor56v8MP504b2Z8kT1MJBB31EWV2Iyc",
+        authDomain: "pulkitguglanidotme.firebaseapp.com",
+        databaseURL: "https://pulkitguglanidotme.firebaseio.com",
+        projectId: "pulkitguglanidotme",
+        storageBucket: "pulkitguglanidotme.appspot.com",
+        messagingSenderId: "590186349149",
+        appId: "1:590186349149:web:b43cd0e5e7e67747fd43b4",
+        measurementId: "G-B8K0D3R5KE"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
     </script>
+
+    <script src="/__/firebase/7.17.1/firebase.js"></script>
+    <script src="/__/firebase/init.js"></script>
     <script src = "js/firebaseScripts.js"></script>
     
     
