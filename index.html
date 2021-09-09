@@ -45,18 +45,47 @@
 			container.style.left = Math.floor((window.innerWidth - w) / 2) + "px";
 		}
 		window.addEventListener('resize', onResize);
+		
+		// mycode
 		window.unityInstance = gameInstance;
 		function fullscreen()
 		{
-			gameInstance.SetFullscreen(1);
+			//gameInstance.SetFullscreen(1);
+			console.log("######### Full Screen ########## :");
+				console.log(document.fullscreen);
+				
+    			gameInstance.SetFullscreen(1);
+				
+				console.log("######### Full Screen ########## :");
+				console.log(document.fullscreen);
 		}
 		
-		document.addEventListener("start", () => {
+		function unfullscreen()
+{
+
+console.log("######### Full Screen ########## :");
+				console.log(document.fullscreen);
+				
+    			gameInstance.SetFullscreen(0);
+				
+				console.log("######### Full Screen ########## :");
+				console.log(document.fullscreen);
+
+}		
+		
+		
+		window.addEventListener("start", () => {
+				console.log("######### Full Screen ########## :");
+				console.log(document.fullscreen);
+				
     			gameInstance.SetFullscreen(1);
+				
+				console.log("######### Full Screen ########## :");
+				console.log(document.fullscreen);
 });
 		
 		setTimeout(function() {
-    gameInstance.SetFullscreen(1);
+    //gameInstance.SetFullscreen(1);
 	console.log("FSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
 }, (5 * 1000));
 		
@@ -98,7 +127,21 @@
 
 <body onload="onResize();">
 	<div id="gameContainer" data-pixelated=""></div>
-	<button onclick="fullscreen()">Click me</button>
+	<!-- <button onclick="fullscreen()">Click me</button> -->
+	
+	 <!-- for getting controls back -->
+	<script>
+		var recaptureInputAndFocus = function() {
+			var canvas = document.getElementById("#canvas");
+			if(canvas) {
+				canvas.setAttribute("tabindex", "1");
+				canvas.focus(); 
+			} else
+				setTimeout(recaptureInputAndFocus, 100);
+		}
+		recaptureInputAndFocus();
+	</script>
+	
 </body>
 
 </html>
