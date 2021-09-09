@@ -83,11 +83,37 @@ console.log("######### Full Screen ########## :");
 				console.log("######### Full Screen ########## :");
 				console.log(document.fullscreen);
 });
-		
-		setTimeout(function() {
-    //gameInstance.SetFullscreen(1);
-	console.log("FSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS");
-}, (5 * 1000));
+
+
+
+
+
+ // focus for controls and fullscreen
+ 
+ 
+ 
+ 
+ 
+	document.addEventListener("fullscreenchange", function() {
+		if(!document.fullscreen)
+		{
+			setTimeout(function() {
+			gameInstance.SetFullscreen(1);
+			console.log("mai check krega ###########");
+			}, (1000));
+		}
+	});
+
+ 
+ var recaptureInputAndFocus = function() {
+			var canvas = document.getElementById("#canvas");
+			if(canvas) {
+				canvas.setAttribute("tabindex", "1");
+				canvas.focus(); 
+			} else
+				setTimeout(recaptureInputAndFocus, 100);
+		}
+		recaptureInputAndFocus();
 		
 	</script>
 	<style>
@@ -131,15 +157,7 @@ console.log("######### Full Screen ########## :");
 	
 	 <!-- for getting controls back -->
 	<script>
-		var recaptureInputAndFocus = function() {
-			var canvas = document.getElementById("#canvas");
-			if(canvas) {
-				canvas.setAttribute("tabindex", "1");
-				canvas.focus(); 
-			} else
-				setTimeout(recaptureInputAndFocus, 100);
-		}
-		recaptureInputAndFocus();
+		
 	</script>
 	
 </body>
