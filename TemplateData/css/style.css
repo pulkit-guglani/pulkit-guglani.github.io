@@ -123,7 +123,7 @@ body{
 
 /* When aspect-ratio is smaller than 4/3*/
 
-/*@media (max-aspect-ratio: 4/3){
+@media (max-aspect-ratio: 4/3){
 	
 	.webgl-content{
 		-webkit-transform: translate(0%, 0%); transform: translate(0%, 0%);
@@ -134,7 +134,7 @@ body{
 	
 	.keepRatio{
 		width:100%;
-		padding-top: 75%;
+		padding-top: 177.7%;
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
@@ -197,7 +197,7 @@ body{
 		width:calc(100% - 2px);
 		height:auto;
 	}
-}*/
+}
 
 
 /* When aspect-ratio is bigger than 16/9*/
