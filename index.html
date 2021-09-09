@@ -45,11 +45,15 @@
 			container.style.left = Math.floor((window.innerWidth - w) / 2) + "px";
 		}
 		window.addEventListener('resize', onResize);
-		
+		window.unityInstance = gameInstance;
 		function fullscreen()
 		{
 			gameInstance.SetFullscreen(1);
 		}
+		
+		document.addEventListener("start", () => {
+    			gameInstance.SetFullscreen(1);
+});
 		
 		setTimeout(function() {
     gameInstance.SetFullscreen(1);
