@@ -103,6 +103,34 @@ console.log("######### Full Screen ########## :");
 			}, (1000));
 		}
 	});
+	document.addEventListener("mozfullscreenchange", function() {
+		if(!document.fullscreen)
+		{
+			setTimeout(function() {
+			gameInstance.SetFullscreen(1);
+			console.log("mai check krega ###########");
+			}, (1000));
+		}
+	});
+	document.addEventListener("webkitfullscreenchange", function() {
+		if(!document.fullscreen)
+		{
+			setTimeout(function() {
+			gameInstance.SetFullscreen(1);
+			console.log("mai check krega ###########");
+			}, (1000));
+		}
+	});
+	document.addEventListener("msfullscreenchange", function() {
+		if(!document.fullscreen)
+		{
+			setTimeout(function() {
+			gameInstance.SetFullscreen(1);
+			console.log("mai check krega ###########");
+			}, (1000));
+		}
+	});
+	
 
  
  var recaptureInputAndFocus = function() {
