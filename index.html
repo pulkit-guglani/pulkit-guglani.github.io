@@ -51,37 +51,22 @@
 		function fullscreen()
 		{
 			//gameInstance.SetFullscreen(1);
-			console.log("######### Full Screen ########## :");
-				console.log(document.fullscreen);
+			
 				
     			gameInstance.SetFullscreen(1);
-				
-				console.log("######### Full Screen ########## :");
-				console.log(document.fullscreen);
 		}
 		
 		function unfullscreen()
 {
-
-console.log("######### Full Screen ########## :");
-				console.log(document.fullscreen);
 				
     			gameInstance.SetFullscreen(0);
-				
-				console.log("######### Full Screen ########## :");
-				console.log(document.fullscreen);
 
 }		
 		
 		
 		window.addEventListener("start", () => {
-				console.log("######### Full Screen ########## :");
-				console.log(document.fullscreen);
 				
     			gameInstance.SetFullscreen(1);
-				
-				console.log("######### Full Screen ########## :");
-				console.log(document.fullscreen);
 });
 
 
@@ -99,37 +84,36 @@ console.log("######### Full Screen ########## :");
 		{
 			setTimeout(function() {
 			gameInstance.SetFullscreen(1);
-			console.log("mai check krega ###########");
 			}, (1000));
 		}
 	});
-	document.addEventListener("mozfullscreenchange", function() {
-		if(!document.fullscreen)
-		{
-			setTimeout(function() {
-			gameInstance.SetFullscreen(1);
-			console.log("mai check krega ###########");
-			}, (1000));
-		}
-	});
-	document.addEventListener("webkitfullscreenchange", function() {
-		if(!document.fullscreen)
-		{
-			setTimeout(function() {
-			gameInstance.SetFullscreen(1);
-			console.log("mai check krega ###########");
-			}, (1000));
-		}
-	});
-	document.addEventListener("msfullscreenchange", function() {
-		if(!document.fullscreen)
-		{
-			setTimeout(function() {
-			gameInstance.SetFullscreen(1);
-			console.log("mai check krega ###########");
-			}, (1000));
-		}
-	});
+	<!-- document.addEventListener("mozfullscreenchange", function() { -->
+		<!-- if(!document.fullscreen) -->
+		<!-- { -->
+			<!-- setTimeout(function() { -->
+			<!-- gameInstance.SetFullscreen(1); -->
+			<!-- console.log("mai check krega ###########"); -->
+			<!-- }, (1000)); -->
+		<!-- } -->
+	<!-- }); -->
+	<!-- document.addEventListener("webkitfullscreenchange", function() { -->
+		<!-- if(!document.fullscreen) -->
+		<!-- { -->
+			<!-- setTimeout(function() { -->
+			<!-- gameInstance.SetFullscreen(1); -->
+			<!-- console.log("mai check krega ###########"); -->
+			<!-- }, (1000)); -->
+		<!-- } -->
+	<!-- }); -->
+	<!-- document.addEventListener("msfullscreenchange", function() { -->
+		<!-- if(!document.fullscreen) -->
+		<!-- { -->
+			<!-- setTimeout(function() { -->
+			<!-- gameInstance.SetFullscreen(1); -->
+			<!-- console.log("mai check krega ###########"); -->
+			<!-- }, (1000)); -->
+		<!-- } -->
+	<!-- }); -->
 	
 
  
