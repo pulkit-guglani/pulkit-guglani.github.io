@@ -9,6 +9,14 @@
     <script>
         screen.orientation.lock('portrait');
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json");
+
+        if (!gameInstance.logo) {
+            gameInstance.logo = document.getElementById("custom-logo");
+            gameInstance.logo.style.display = "block";
+            gameInstance.container.appendChild(unityInstance.logo);
+        }
+
+
         var scaleToFit;
         try {
             scaleToFit = !!JSON.parse("");
@@ -93,6 +101,8 @@
                 }, (1000));
             }
         });
+
+        /*
         <!-- document.addEventListener("mozfullscreenchange", function() { -->
         <!-- if(!document.fullscreen) -->
         <!-- { -->
@@ -120,7 +130,7 @@
         <!-- }, (1000)); -->
         <!-- } -->
         <!-- }); -->
-
+*/
 
 
         var recaptureInputAndFocus = function() {
