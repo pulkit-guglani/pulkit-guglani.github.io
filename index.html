@@ -10,10 +10,8 @@
         screen.orientation.lock('portrait');
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json");
 
-        if (!gameInstance.logo) {
-            gameInstance.logo = document.getElementById("custom-logo");
+        gameInstance.logo = document.getElementById("custom-logo");
 
-        }
 
 
         var scaleToFit;
