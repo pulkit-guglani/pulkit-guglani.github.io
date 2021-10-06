@@ -69,7 +69,13 @@
         window.addEventListener("start", () => {
             if (mobileCheck()) {
                 gameInstance.SetFullscreen(1);
-            }
+			}
+			if(document.getElementById("custom-logo")
+				{
+				 var gfg_down =
+                document.getElementById("custom-logo");
+                gfg_down.parentNode.removeChild(gfg_down);
+				}
         });
 
 
@@ -189,8 +195,8 @@
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            width: 200px;
-            height: 100px;
+            width: 250px;
+            height: 150px;
         }
     </style>
 </head>
