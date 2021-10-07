@@ -159,15 +159,18 @@
             overflow: visible;
             padding: 0;
             margin: 0;
+			outline: 0px solid transparent;
         }
         
         div#gameContainer {
             background: transparent !important;
             position: absolute;
+			outline: 0px solid transparent;
         }
         
         div#gameContainer canvas {
             position: absolute;
+			outline: 0px solid transparent;
         }
         
         div#gameContainer[data-pixelated='true'] canvas {
@@ -180,6 +183,7 @@
             image-rendering: optimize-contrast;
             image-rendering: pixelated;
             -ms-interpolation-mode: nearest-neighbor;
+			outline: 0px solid transparent;
         }
         
         #custom-logo {
@@ -245,7 +249,7 @@
 </head>
 
 <body onload="onResize();">
-    <div id="gameContainer" data-pixelated="" style=" outline: none;"></div>
+    <div id="gameContainer" data-pixelated="" style=" outline: 0px solid transparent;"></div>
     <div id="custom-logo"></div>
 
     <!-- Google Tag Manager (noscript) -->
