@@ -7,7 +7,6 @@
     <title>Football_Run</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
-        screen.orientation.lock('portrait');
         var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json");
         if (!gameInstance.logo) {
             gameInstance.logo = document.getElementById("custom-logo");
@@ -66,6 +65,8 @@
 
 
         window.addEventListener("start", () => {
+
+            analyticsGa()
             if (mobileCheck()) {
                 gameInstance.SetFullscreen(1);
             }
@@ -159,18 +160,18 @@
             overflow: visible;
             padding: 0;
             margin: 0;
-			outline: 0px solid transparent;
+            outline: 0px solid transparent;
         }
         
         div#gameContainer {
             background: transparent !important;
             position: absolute;
-			outline: 0px solid transparent;
+            outline: 0px solid transparent;
         }
         
         div#gameContainer canvas {
             position: absolute;
-			outline: 0px solid transparent;
+            outline: 0px solid transparent;
         }
         
         div#gameContainer[data-pixelated='true'] canvas {
@@ -183,7 +184,7 @@
             image-rendering: optimize-contrast;
             image-rendering: pixelated;
             -ms-interpolation-mode: nearest-neighbor;
-			outline: 0px solid transparent;
+            outline: 0px solid transparent;
         }
         
         #custom-logo {
