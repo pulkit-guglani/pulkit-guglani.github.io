@@ -7,17 +7,15 @@ var adsManager;
 var adsLoader;
 var adDisplayContainer;
 var intervalTimer;
-var playButton;
 var videoContent;
 
 function init() {
   videoContent = document.getElementById('contentElement');
-  playButton = document.getElementById('playButton');
-  playButton.addEventListener('click', playAds);
   setUpIMA();
 }
 
 function setUpIMA() {
+  google.ima.settings.setDisableCustomPlaybackForIOS10Plus(true);
   // Create the ad display container.
   createAdDisplayContainer();
   // Create ads loader.
@@ -41,7 +39,8 @@ function setUpIMA() {
   adsRequest.adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?' +
       'sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&' +
       'impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&' +
-      'cust_params=deployment%3Ddevsite%26sample_ct%3Dlinear&correlator=';
+      'cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&' +
+      'correlator=';
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.
@@ -100,6 +99,8 @@ function onAdsManagerLoaded(adsManagerLoadedEvent) {
   adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdEvent);
   adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, onAdEvent);
   adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, onAdEvent);
+
+  playAds();
 }
 
 function onAdEvent(adEvent) {
