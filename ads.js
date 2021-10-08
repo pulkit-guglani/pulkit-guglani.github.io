@@ -1,167 +1,91 @@
-// Copyright 2013 Google Inc. All Rights Reserved.
-// You may study, modify, and use this example for any purpose.
-// Note that this example is provided "as is", WITHOUT WARRANTY
-// of any kind either expressed or implied.
+var adContent = document.getElementById('adContainer');
+var adDisplayContainer = new google.ima.AdDisplayContainer(adContent);
+var adsLoader = new google.ima.AdsLoader(adDisplayContainer);
 
-var adsManager;
-var adsLoader;
-var adDisplayContainer;
-var intervalTimer;
-var videoContent;
+adDisplayContainer.initialize();
 
-function init() {
-  videoContent = document.getElementById('contentElement');
-  setUpIMA();
+function onAdError(e) {
+  console.log(e);
+  console.log(' error in ad ');
+  adContent.style.display = 'none';
 }
+adsLoader.addEventListener(
+  google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
+  onAdsManagerLoaded,
+  false
+);
+adsLoader.addEventListener(
+  google.ima.AdErrorEvent.Type.AD_ERROR,
+  onAdError,
+  false
+);
+var contentEndedListener = function() {
+  adsLoader.contentComplete();
+  //console.log('ggg');
+  adsLoader.destroy();
+};
+var adsRequest = new google.ima.AdsRequest();
+adsRequest.adTagUrl =
+  'https://tpc.googlesyndication.com/ima3vpaid?vad_format=linear&correlator=&adtagurl=https%3A%2F%2Fpubads.g.doubleclick.net%2Fgampad%2Fads%3Fsz%3D400x300%7C640x480%26description_url%3Dhttps%253A%252F%252Fgameszone.hungama.com%252F%26vpos%3Dpreroll%26iu%3D%2F317733190%2FGameszone_mowlaps%26env%3Dvp%26gdfp_req%3D1%26output%3Dvast%26tfcd%3D0%26npa%3D0%26vpmute%3D0%26vpa%3D0%26type%3Djs%26unviewed_position_start%3D1';
+adsRequest.linearAdSlotWidth = 640;
+adsRequest.linearAdSlotHeight = 400;
+adsRequest.nonLinearAdSlotWidth = 640;
+adsRequest.nonLinearAdSlotHeight = 150;
+function onContentPauseRequested() {}
 
-function setUpIMA() {
-  google.ima.settings.setDisableCustomPlaybackForIOS10Plus(true);
-  // Create the ad display container.
-  createAdDisplayContainer();
-  // Create ads loader.
-  adsLoader = new google.ima.AdsLoader(adDisplayContainer);
-  // Listen and respond to ads loaded and error events.
-  adsLoader.addEventListener(
-      google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED,
-      onAdsManagerLoaded, false);
-  adsLoader.addEventListener(
-      google.ima.AdErrorEvent.Type.AD_ERROR, onAdError, false);
-
-  // An event listener to tell the SDK that our content video
-  // is completed so the SDK can play any post-roll ads.
-  var contentEndedListener = function() {
-    adsLoader.contentComplete();
-  };
-  videoContent.onended = contentEndedListener;
-
-  // Request video ads.
-  var adsRequest = new google.ima.AdsRequest();
-  adsRequest.adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads?' +
-      'sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&' +
-      'impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&' +
-      'cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&' +
-      'correlator=';
-
-  // Specify the linear and nonlinear slot sizes. This helps the SDK to
-  // select the correct creative if multiple are returned.
-  adsRequest.linearAdSlotWidth = 640;
-  adsRequest.linearAdSlotHeight = 400;
-
-  adsRequest.nonLinearAdSlotWidth = 640;
-  adsRequest.nonLinearAdSlotHeight = 150;
-
-  adsLoader.requestAds(adsRequest);
-}
-
-function createAdDisplayContainer() {
-  // We assume the adContainer is the DOM id of the element that will house
-  // the ads.
-  adDisplayContainer = new google.ima.AdDisplayContainer(
-      document.getElementById('adContainer'), videoContent);
-}
-
-function playAds() {
-  // Initialize the container. Must be done via a user action on mobile devices.
-  videoContent.load();
-  adDisplayContainer.initialize();
-
-  try {
-    // Initialize the ads manager. Ad rules playlist will start at this time.
-    adsManager.init(640, 360, google.ima.ViewMode.NORMAL);
-    // Call play to start showing the ad. Single video and overlay ads will
-    // start at this time; the call will be ignored for ad rules.
-    adsManager.start();
-  } catch (adError) {
-    // An error may be thrown if there was a problem with the VAST response.
-    videoContent.play();
-  }
-}
-
-function onAdsManagerLoaded(adsManagerLoadedEvent) {
-  // Get the ads manager.
-  var adsRenderingSettings = new google.ima.AdsRenderingSettings();
-  adsRenderingSettings.restoreCustomPlaybackStateOnAdBreakComplete = true;
-  // videoContent should be set to the content video element.
-  adsManager =
-      adsManagerLoadedEvent.getAdsManager(videoContent, adsRenderingSettings);
-
-  // Add listeners to the required events.
-  adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
-  adsManager.addEventListener(
-      google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED, onContentPauseRequested);
-  adsManager.addEventListener(
-      google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED,
-      onContentResumeRequested);
-  adsManager.addEventListener(
-      google.ima.AdEvent.Type.ALL_ADS_COMPLETED, onAdEvent);
-
-  // Listen to any additional events, if necessary.
-  adsManager.addEventListener(google.ima.AdEvent.Type.LOADED, onAdEvent);
-  adsManager.addEventListener(google.ima.AdEvent.Type.STARTED, onAdEvent);
-  adsManager.addEventListener(google.ima.AdEvent.Type.COMPLETE, onAdEvent);
-
-  playAds();
-}
-
-function onAdEvent(adEvent) {
-  // Retrieve the ad from the event. Some events (e.g. ALL_ADS_COMPLETED)
-  // don't have ad object associated.
-  var ad = adEvent.getAd();
-  switch (adEvent.type) {
-    case google.ima.AdEvent.Type.LOADED:
-      // This is the first event sent for an ad - it is possible to
-      // determine whether the ad is a video ad or an overlay.
-      if (!ad.isLinear()) {
-        // Position AdDisplayContainer correctly for overlay.
-        // Use ad.width and ad.height.
-        videoContent.play();
-      }
-      break;
-    case google.ima.AdEvent.Type.STARTED:
-      // This event indicates the ad has started - the video player
-      // can adjust the UI, for example display a pause button and
-      // remaining time.
-      if (ad.isLinear()) {
-        // For a linear ad, a timer can be started to poll for
-        // the remaining time.
-        intervalTimer = setInterval(
-            function() {
-              var remainingTime = adsManager.getRemainingTime();
-            },
-            300);  // every 300ms
-      }
-      break;
-    case google.ima.AdEvent.Type.COMPLETE:
-      // This event indicates the ad has finished - the video player
-      // can perform appropriate UI actions, such as removing the timer for
-      // remaining time detection.
-      if (ad.isLinear()) {
-        clearInterval(intervalTimer);
-      }
-      break;
-  }
-}
-
-function onAdError(adErrorEvent) {
-  // Handle the error logging.
-  console.log(adErrorEvent.getError());
+function AdVideoComplete() {
+  adContent.style.display = 'none';
   adsManager.destroy();
 }
 
-function onContentPauseRequested() {
-  videoContent.pause();
-  // This function is where you should setup UI for showing ads (e.g.
-  // display ad timer countdown, disable seeking etc.)
-  // setupUIForAds();
-}
-
 function onContentResumeRequested() {
-  videoContent.play();
-  // This function is where you should ensure that your UI is ready
-  // to play content. It is the responsibility of the Publisher to
-  // implement this function when necessary.
-  // setupUIForContent();
+  //console.log(" ad skipped ");
+  adContent.style.display = 'none';
+  adsManager.destroy();
 }
 
-// Wire UI element references and UI event listeners.
-init();
+function onUserClosed() {
+  //console.log(" ad skipped ");
+  adContent.style.display = 'none';
+  adsManager.destroy();
+}
+// var playButton = document.getElementById('playButton');
+// playButton.addEventListener('click', requestAds);
+
+function requestAds() {
+  adsLoader.requestAds(adsRequest);
+}
+
+function onAdsManagerLoaded(e) {
+  adsManager = e.getAdsManager(adContent);
+  adsManager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, onAdError);
+  adsManager.addEventListener(
+    google.ima.AdEvent.Type.CONTENT_PAUSE_REQUESTED,
+    onContentPauseRequested
+  );
+  adsManager.addEventListener(google.ima.AdEvent.Type.USER_CLOSE, onUserClosed);
+  adsManager.addEventListener(
+    google.ima.AdEvent.Type.COMPLETE,
+    AdVideoComplete
+  );
+  adsManager.addEventListener(
+    google.ima.AdEvent.Type.ALL_ADS_COMPLETED,
+    AdVideoComplete
+  );
+  adsManager.addEventListener(google.ima.AdEvent.Type.SKIPPED, AdVideoComplete);
+  adsManager.addEventListener(
+    google.ima.AdEvent.Type.CONTENT_RESUME_REQUESTED,
+    onContentResumeRequested
+  );
+  try {
+    adsManager.init(
+      window.innerWidth,
+      window.innerHeight,
+      google.ima.ViewMode.NORMAL
+    );
+    adsManager.start();
+  } catch (e) {
+    console.log('error loading ads', e);
+    adContent.style.display = 'none';
+  }
+}
