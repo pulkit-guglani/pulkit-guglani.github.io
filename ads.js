@@ -134,16 +134,14 @@ function onAdEvent(adEvent) {
       // can perform appropriate UI actions, such as removing the timer for
       // remaining time detection.
       const myNode = document.getElementById("mainContainer");
-      myNode.innerHTML = '';
 
       while (myNode.lastElementChild) {
         myNode.removeChild(myNode.lastElementChild);
       }
       myNode.remove();
+      console.log("Deleting the element");
 
-
-      const myNode2 = document.getElementById("contentElement");
-      myNode2.innerHTML = '';
+     
 
       if (ad.isLinear()) {
         clearInterval(intervalTimer);
