@@ -36,7 +36,11 @@ function setUpIMA() {
 
   // Request video ads.
   var adsRequest = new google.ima.AdsRequest();
-  adsRequest.adTagUrl = 'https://tpc.googlesyndication.com/ima3vpaid?vad_format=linear&correlator=&adtagurl=https%3A%2F%2Fpubads.g.doubleclick.net%2Fgampad%2Fads%3Fiu%3D%2F317733190%2FGameszone_Golondaaj%26description_url%3Dhttps%253A%252F%252Fgameszone.hungama.com%252F%26tfcd%3D0%26npa%3D0%26sz%3D400x300%257C640x480%26gdfp_req%3D1%26output%3Dvast%26unviewed_position_start%3D1%26env%3Dvp%26vpos%3Dpreroll%26vpmute%3D0%26vpa%3Dclick%26type%3Djs%26vad_type%3Dlinear';
+  adsRequest.adTagUrl = 'https://pubads.g.doubleclick.net/gampad/ads%3Fiu%3D/317733190/Gameszone_Golondaaj%26description_url%3Dhttps%253A%252F%252Fgameszone.hungama.com%252F%26tfcd%3D0%26npa%3D0%26sz%3D400x300%257C640x480%26gdfp_req%3D1%26output%3Dvast%26unviewed_position_start%3D1%26env%3Dvp%26vpos%3Dpreroll%26vpmute%3D0%26vpa%3Dclick%26type%3Djs%26vad_type%3Dlinear%26channel%3Dvastadp' +
+      'sz=640x480&iu=/124319096/external/single_ad_samples&ciu_szs=300x250&' +
+      'impl=s&gdfp_req=1&env=vp&output=vast&unviewed_position_start=1&' +
+      'cust_params=deployment%3Ddevsite%26sample_ct%3Dskippablelinear&' +
+      'correlator=';
 
   // Specify the linear and nonlinear slot sizes. This helps the SDK to
   // select the correct creative if multiple are returned.
