@@ -135,10 +135,16 @@ function onAdEvent(adEvent) {
       // remaining time detection.
       const myNode = document.getElementById("mainContainer");
       myNode.innerHTML = '';
-     
+
+      while (myNode.lastElementChild) {
+        myNode.removeChild(myNode.lastElementChild);
+      }
+      myNode.remove();
+
+
       const myNode2 = document.getElementById("contentElement");
       myNode2.innerHTML = '';
-      
+
       if (ad.isLinear()) {
         clearInterval(intervalTimer);
       }
