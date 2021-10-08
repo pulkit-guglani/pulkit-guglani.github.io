@@ -143,6 +143,8 @@
         window.addEventListener("start", () => {
             if(isGameLoaded == false)
             {
+              isGameLoaded = true;
+              setUpIMA();
               // ga('send', 'event', 'Game Started');
             }
 

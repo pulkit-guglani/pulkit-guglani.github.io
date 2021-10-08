@@ -13,7 +13,7 @@ var maincontainer;
 function init() {
   videoContent = document.getElementById('contentElement');
   maincontainer = document.getElementById('mainContainer');
-  setUpIMA();
+  //setUpIMA();
 }
 
 function setUpIMA() {
