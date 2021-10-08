@@ -8,9 +8,11 @@ var adsLoader;
 var adDisplayContainer;
 var intervalTimer;
 var videoContent;
+var maincontainer;
 
 function init() {
   videoContent = document.getElementById('contentElement');
+  maincontainer = document.getElementById('mainContainer');
   setUpIMA();
 }
 
@@ -131,6 +133,12 @@ function onAdEvent(adEvent) {
       // This event indicates the ad has finished - the video player
       // can perform appropriate UI actions, such as removing the timer for
       // remaining time detection.
+      const myNode = document.getElementById("mainContainer");
+      myNode.innerHTML = '';
+     
+      const myNode2 = document.getElementById("contentElement");
+      myNode2.innerHTML = '';
+      
       if (ad.isLinear()) {
         clearInterval(intervalTimer);
       }
