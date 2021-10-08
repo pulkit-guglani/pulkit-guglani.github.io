@@ -1,4 +1,9 @@
 #mainContainer {
+  top: 0px;
+  left: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   width: 640px;
   height: 360px;
@@ -6,16 +11,16 @@
 
 #content, #adContainer {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   width: 640px;
   height: 360px;
 }
 
 #contentElement {
+  top: 0px;
+  left: 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 640px;
   height: 360px;
   overflow: hidden;
