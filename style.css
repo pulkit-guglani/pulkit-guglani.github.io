@@ -20,5 +20,6 @@
   width: 640px;
   height: 360px;
   overflow: hidden;
-  margin-left: 200px;
+  align-self: center;
+  align-content: center;
 }
