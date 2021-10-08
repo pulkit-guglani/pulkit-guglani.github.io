@@ -4,6 +4,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   position: relative;
   width: 640px;
   height: 360px;
@@ -21,6 +23,8 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
   width: 640px;
   height: 360px;
   overflow: hidden;
