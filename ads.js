@@ -164,7 +164,14 @@ function onContentPauseRequested() {
 }
 
 function onContentResumeRequested() {
-  videoContent.play();
+  //videoContent.play();
+  const myNode = document.getElementById("mainContainer");
+
+      while (myNode.lastElementChild) {
+        myNode.removeChild(myNode.lastElementChild);
+      }
+      myNode.remove();
+      console.log("Deleting the element");
   // This function is where you should ensure that your UI is ready
   // to play content. It is the responsibility of the Publisher to
   // implement this function when necessary.
