@@ -191,9 +191,11 @@
                
         // focus for controls and fullscreen
 
+        setTimeout(updatead, 4000);
 
-
-        if(mobileCheck())
+        function updatead()
+        {
+          if(mobileCheck())
     {
       console.log("mobile h to padding bd gyi");
       document.getElementById("adContainer").style.paddingTop = "30%";
@@ -205,6 +207,9 @@
       console.log("mobile nhi h to padding ghat gyi");
 
     }
+        }
+
+     
 
 
 
