@@ -305,21 +305,6 @@
 
 <body onload="onResize();">
 
-  <script>
-
-    if(mobileCheck())
-    {
-      console.log("mobile h to padding bd gyi");
-      document.getElementById("adContainer").style.paddingTop = "40%";
-      document.getElementById("adContainer").style.paddingLeft = "18%";
-
-    }
-    else
-    {
-      console.log("mobile nhi h to padding ghat gyi");
-
-    }
-    </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KV8KQXV"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -337,15 +322,17 @@
     <div id="mainContainer">
       <div id="content">
         <video id="contentElement" playsinline muted>
-          <!-- <source src="https://storage.googleapis.com/gvabox/media/samples/stock.mp4"></source> -->
+          <source src="https://storage.googleapis.com/gvabox/media/samples/stock.mp4"></source>
 
         </video>
       </div>
-      <div id="adContainer" style = "padding-left: 20%; padding-top: 6%"></div>
+      <div id="adContainer" style = "padding-left: 18%; padding-top: 30%;"></div>
     </div>
     <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
     <script type="text/javascript" src="ads.js"></script>
-   
+    <script>
+      document.getElementById("adContainer").style.paddingTop = "30%";
+      </script>
     <!-- <button onclick="fullscreen()">Click me</button> -->
 
     <!-- for getting controls back -->
