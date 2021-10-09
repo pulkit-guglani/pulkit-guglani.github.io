@@ -191,19 +191,32 @@
     }
 
 
+    var isSoundOn = false;
     window.addEventListener('touchstart', function () {
 
+      if(isSoundOn == false)
+      {
+        isSoundOn = true;
+        const soundEffect = new Audio();
+        soundEffect.autoplay = true;
+      }
       
-      // create empty buffer
-      var buffer = this.myContext.createBuffer(1, 1, 22050);
-      var source = this.myContext.createBufferSource();
-      source.buffer = buffer;
 
-      // connect to output (your speakers)
-      source.connect(myContext.destination);
+// onClick of first interaction on page before I need the sounds
+// (This is a tiny MP3 file that is silent and extremely short - retrieved from https://bigsoundbank.com and then modified)
+soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
 
-      // play the file
-      source.noteOn(0);
+
+      // // create empty buffer
+      // var buffer = this.myContext.createBuffer(1, 1, 22050);
+      // var source = this.myContext.createBufferSource();
+      // source.buffer = buffer;
+
+      // // connect to output (your speakers)
+      // source.connect(myContext.destination);
+
+      // // play the file
+      // source.noteOn(0);
 
     }, false);
 
