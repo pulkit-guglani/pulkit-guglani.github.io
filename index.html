@@ -195,8 +195,8 @@
 
       
       // create empty buffer
-      var buffer = this.createBuffer(1, 1, 22050);
-      var source = this.createBufferSource();
+      var buffer = this.myContext.createBuffer(1, 1, 22050);
+      var source = this.myContext.createBufferSource();
       source.buffer = buffer;
 
       // connect to output (your speakers)
@@ -379,7 +379,7 @@
 
       </video>
     </div>
-    <div id="adContainer" style="padding-left: 18%; padding-top: 5%;"></div>
+    <div id="adContainer" style="padding-left: 20%; padding-top: 5%;"></div>
   </div>
   <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
   <script type="text/javascript" src="ads.js"></script>
