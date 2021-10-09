@@ -174,9 +174,19 @@
             return check;
         };
 
-        if (navigator.userAgent.includes('Safari') && navigator.userAgent.includes('Chrome') == false) {
-            window.location = "error.html"
-        }
+        // if (navigator.userAgent.includes('Safari') && navigator.userAgent.includes('Chrome') == false) {
+        //     window.location = "error.html"
+        // }
+
+        var isSafari = navigator.vendor && navigator.vendor.indexOf('Apple') > -1 &&
+               navigator.userAgent &&
+               navigator.userAgent.indexOf('CriOS') == -1 &&
+               navigator.userAgent.indexOf('FxiOS') == -1;
+
+               if(isSafari)
+               {
+                window.location = "error.html"
+               }
 
         // focus for controls and fullscreen
 
