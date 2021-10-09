@@ -89,6 +89,7 @@
             gameInstance.logo = document.getElementById("custom-logo");
 
         }
+        
         var scaleToFit;
         try {
             scaleToFit = !!JSON.parse("");
@@ -172,7 +173,13 @@
         };
 
 
+        if(mobileCheck())
+    {
+      console.log("mobile h to padding bd gyi");
+      document.getElementById("adContainer").style.paddingTop = "100%";
+      document.getElementById("adContainer").style.paddingLeft = "18%";
 
+    }
 
 
         // focus for controls and fullscreen
