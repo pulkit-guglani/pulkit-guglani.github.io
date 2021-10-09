@@ -89,7 +89,6 @@
             gameInstance.logo = document.getElementById("custom-logo");
 
         }
-        
         var scaleToFit;
         try {
             scaleToFit = !!JSON.parse("");
@@ -173,15 +172,6 @@
         };
 
 
-        if(mobileCheck())
-    {
-      console.log("mobile h to padding bd gyi");
-      document.getElementById("adContainer").style.paddingTop = "100%";
-      document.getElementById("adContainer").style.paddingLeft = "18%";
-
-    }
-
-    
 
         // focus for controls and fullscreen
 
@@ -318,6 +308,11 @@
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
 
+      
+
+
+
+
     <div id="gameContainer" data-pixelated="" style=" outline: 0px solid transparent;"></div>
     <div id="custom-logo"></div>
 
@@ -328,11 +323,10 @@
 
         </video>
       </div>
-      <div id="adContainer" style = "padding-left: 21%; padding-top: 5%;"></div>
+      <div id="adContainer" style = "padding-left: 18%; padding-top: 5%;"></div>
     </div>
     <script type="text/javascript" src="//imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
     <script type="text/javascript" src="ads.js"></script>
-   
     <!-- <button onclick="fullscreen()">Click me</button> -->
 
     <!-- for getting controls back -->
