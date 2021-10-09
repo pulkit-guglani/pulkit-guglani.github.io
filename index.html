@@ -193,9 +193,10 @@
 
     window.addEventListener('touchstart', function () {
 
+      
       // create empty buffer
-      var buffer = myContext.createBuffer(1, 1, 22050);
-      var source = myContext.createBufferSource();
+      var buffer = this.createBuffer(1, 1, 22050);
+      var source = this.createBufferSource();
       source.buffer = buffer;
 
       // connect to output (your speakers)
