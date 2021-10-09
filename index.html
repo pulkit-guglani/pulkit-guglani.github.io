@@ -188,6 +188,26 @@
                 window.location = "error.html"
                }
 
+               
+    if(mobileCheck())
+    {
+      console.log("mobile h to padding bd gyi");
+      document.getElementById("adContainer").style.paddingTop = "30%";
+      document.getElementById("adContainer").style.paddingLeft = "18%";
+
+    }
+    else
+    {
+      console.log("mobile nhi h to padding ghat gyi");
+
+    }
+
+
+
+
+ <script>
+      document.getElementById("adContainer").style.paddingTop = "30%";
+      </script>
         // focus for controls and fullscreen
 
 
