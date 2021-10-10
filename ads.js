@@ -172,6 +172,8 @@ function onContentResumeRequested() {
       }
       myNode.remove();
       console.log("Deleting the element");
+      recaptureInputAndFocus();
+
   // This function is where you should ensure that your UI is ready
   // to play content. It is the responsibility of the Publisher to
   // implement this function when necessary.
