@@ -137,7 +137,7 @@ gtag('config', 'UA- 209849007-1 ');
       }
 
       if (mobileCheck()) {
-        //gameInstance.SetFullscreen(1);
+        gameInstance.SetFullscreen(1);
       }
       if (document.getElementById("custom-logo")) {
         var gfg_down =
@@ -147,7 +147,7 @@ gtag('config', 'UA- 209849007-1 ');
     });
 
     document.addEventListener("CheckPhone", function () {
-      debug.log("message aaya hai, ab check krte hai LALALALA");
+      debug.log("message aaya hai, ab check krte hai ");
       unityInstance.SendMessage("Bridge", "SendToUnity", "ye le message");
     });
 
