@@ -22,7 +22,7 @@ window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
-gtag('config', 'G-S9BYN4NLP0');
+gtag('config', 'UA- 209849007-1 ');
 </script>
 
 
@@ -132,7 +132,8 @@ gtag('config', 'G-S9BYN4NLP0');
     var isGameLoaded = false;
     window.addEventListener("start", () => {
       if (isGameLoaded == false) {
-        // ga('send', 'event', 'Game Started');
+        isGameLoaded = true;
+        ga('send', 'event', 'Game Started');
       }
 
       if (mobileCheck()) {
