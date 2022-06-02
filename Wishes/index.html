@@ -6,6 +6,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.0.3/chroma.min.js"></script>
     <script src="https://klevron.github.io/codepen/lib/verlet-1.0.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+
 
 
 </head>
@@ -18,10 +21,55 @@
     <h1>What's behind the curtain ?</h1>
 
     <script>
+        var end = Date.now() + (3 * 1000);
+
         function HideCanvas() {
+            end = Date.now() + (3 * 1000);
+
             const myElement = document.getElementById("canvas");
-            myElement.style.display = "none";
+            myElement.style.animationName = "example";
+            myElement.style.animationDuration = "4s";
+            frame();
+            var delayInMilliseconds = 3000; //1 second
+
+            setTimeout(function() {
+                myElement.style.display = "none";
+            }, delayInMilliseconds);
         }
+
+
+
+
+
+
+        // go Buckeyes!
+        var colors = ['#bb0000', '#ffffff'];
+
+        function frame() {
+
+            confetti({
+                particleCount: 2,
+                angle: 60,
+                spread: 70,
+                origin: {
+                    x: 0,
+                },
+                colors: colors
+            });
+            confetti({
+                particleCount: 2,
+                angle: 120,
+                spread: 70,
+                origin: {
+                    x: 1,
+                },
+                colors: colors
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        };
     </script>
     <!-- <script type="importmap">
         { "imports": { "three": "../build/three.module.js" } }

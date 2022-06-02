@@ -18,6 +18,15 @@ canvas {
     z-index: 1;
 }
 
+@keyframes example {
+    from {
+        top: 0px;
+    }
+    to {
+        top: -2000px;
+    }
+}
+
 button {
     position: relative;
     z-index: 2;
