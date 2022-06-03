@@ -17,24 +17,36 @@
 <body>
     <script type="module" src="scripts.js">
     </script>
+
+    <div class="top" id="top" onclick="HideCanvas()">
+        <button>Reveal</button>
+
+    </div>
     <canvas id="canvas"></canvas>
 
     <h1>What's behind the curtain ?</h1>
 
     <script>
-        var end = Date.now() + (3 * 1000);
+        var end = Date.now() + (2 * 1000);
 
         function HideCanvas() {
-            end = Date.now() + (3 * 1000);
+            end = Date.now() + (2 * 1000);
 
             const myElement = document.getElementById("canvas");
             myElement.style.animationName = "example";
-            myElement.style.animationDuration = "4s";
+            myElement.style.animationDuration = "6s";
+
+            const myElement2 = document.getElementById("top");
+            myElement2.style.animationName = "example";
+            myElement2.style.animationDuration = "6s";
+
             frame();
             var delayInMilliseconds = 3000; //1 second
 
             setTimeout(function() {
                 myElement.style.display = "none";
+                myElement2.style.display = "none";
+
             }, delayInMilliseconds);
         }
 
@@ -81,7 +93,7 @@
     <p>Feel free to play with conf (<em>nx</em>, <em>gravity</em>...)</p>
 
     </p>
-    <button onclick="HideCanvas()">Try it</button>
+
 
 </body>
 

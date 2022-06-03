@@ -1,81 +1,103 @@
-body,
-html {
-    height: 100%;
-}
-
-body {
-    margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background-image: radial-gradient(circle, #ffffff, #aaaaaa);
-    z-index: 1;
-    position: relative;
-}
-
-canvas {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    z-index: 1;
-}
-
-@keyframes example {
-    from {
-        top: 0px;
+    body,
+    html {
+        height: 100%;
     }
-    to {
-        top: -2000px;
+    
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+        background-image: radial-gradient(circle, #ffffff, #aaaaaa);
+        z-index: 1;
+        position: relative;
     }
-}
-
-button {
-    position: relative;
-    z-index: 2;
-}
-
-h1 {
-    font-size: 50px;
-    text-align: center;
-    width: 60%;
-    margin: 0 auto;
-    padding-top: 10%;
-}
-
-p {
-    font-size: 30px;
-    text-align: center;
-    width: 50%;
-    margin: 1em auto 0;
-}
-
-button {
-    z-index: 2;
-}
-
-.collection {
-    position: fixed;
-    z-index: 1000;
-    width: auto;
-    bottom: 0;
-    right: 0;
-    margin: 15px;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-
-.collection a {
-    display: inline-block;
-    background: #fff;
-    opacity: 0.4;
-    transition: opacity 0.7s;
-    margin-left: 5px;
-    padding: 5px;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #000;
-}
-
-.collection a:hover {
-    opacity: 1;
-}
+    
+    canvas {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+    
+    .top {
+        height: 40px;
+        width: 100%;
+        background-color: #1b1b1b;
+        z-index: 3;
+        position: fixed;
+        text-align: center;
+        color: #ffffff;
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    @keyframes example {
+        from {
+            top: 0%;
+        }
+        to {
+            top: -150%;
+        }
+    }
+    
+    button {
+        position: inherit;
+        height: 50px;
+        width: 50px;
+        scale: inherit;
+        border-radius: 50%;
+        background: #880101;
+        color: #e7e7e7;
+        font-size: 10px;
+    }
+    
+    h1 {
+        font-size: 50px;
+        text-align: center;
+        width: 60%;
+        margin: 0 auto;
+        padding-top: 10%;
+    }
+    
+    p {
+        font-size: 30px;
+        text-align: center;
+        width: 50%;
+        margin: 1em auto 0;
+    }
+    
+    p.topbar {
+        font-size: 20;
+        text-align: center;
+        width: 100;
+        padding-bottom: 200%;
+        vertical-align: middle;
+    }
+    
+    .collection {
+        position: fixed;
+        z-index: 1000;
+        width: auto;
+        bottom: 0;
+        right: 0;
+        margin: 15px;
+        padding: 0;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+    }
+    
+    .collection a {
+        display: inline-block;
+        background: #fff;
+        opacity: 0.4;
+        transition: opacity 0.7s;
+        margin-left: 5px;
+        padding: 5px;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #000;
+    }
+    
+    .collection a:hover {
+        opacity: 1;
+    }
