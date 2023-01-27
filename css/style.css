@@ -11009,6 +11009,11 @@ h5,
   height: 750px;
   z-index: 0;
 }
+@media screen and (max-width: 768px) {
+  .owl-carousel.home-slider {
+    z-index: -1;
+  }
+}
 .owl-carousel.home-slider .slider-item {
   background-size: cover;
   background-repeat: no-repeat;
