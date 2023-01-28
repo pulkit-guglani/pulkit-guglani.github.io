@@ -11471,6 +11471,14 @@ h5,
   color: #fff;
   width: 130px;
 }
+@media screen and (max-width: 420px) {
+  .ftco-about ul.about-info li span {
+    width: calc(100% - 80px);
+  }
+  .ftco-about ul.about-info li span:first-child {
+    width: 80px;
+  }
+}
 
 .ftco-about .counter-wrap .text p {
   font-size: 20px;
@@ -11895,6 +11903,7 @@ textarea.form-control {
   display: flex;
   justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 .ftco-footer-social li {
   list-style: none;
